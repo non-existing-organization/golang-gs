@@ -9,11 +9,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/non-existing-organization/golang-gs">
-    <img src="https://github.com/stiliajohny/golang-gs/raw/master/.assets/logo.png" alt="Main Logo" width="80" height="80">
+  <a href="https://github.com/non-existing-organization/golang-gsls">
+    <img src="https://github.com/stiliajohny/golang-gsls/raw/master/.assets/logo.png" alt="Main Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">golang-gs</h3>
+  <h3 align="center">golang-gsls</h3>
 
   <p align="center">
     Get a quick overview of your Git repositories with gs, the cross-platform alternative to ls.
@@ -21,9 +21,9 @@
     <a href="./README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/non-existing-organization/golang-gs/issues/new?labels=i%3A+bug&template=1-bug-report.md">Report Bug</a>
+    <a href="https://github.com/non-existing-organization/golang-gsls/issues/new?labels=i%3A+bug&template=1-bug-report.md">Report Bug</a>
     ·
-    <a href="https://github.com/non-existing-organization/golang-gs/issues/new?labels=i%3A+enhancement&template=2-feature-request.md">Request Feature</a>
+    <a href="https://github.com/non-existing-organization/golang-gsls/issues/new?labels=i%3A+enhancement&template=2-feature-request.md">Request Feature</a>
   </p>
 </p>
 
@@ -48,7 +48,7 @@
 
 ## About The Project
 
-![golang-gs Screen Shot](./.assets/screenshot.png)
+![golang-gsls Screen Shot](./.assets/screenshot.png)
 
 The "gs" tool is a modified version of the traditional "ls" command in Unix-like operating systems. The primary goal of this tool is to provide a better overview of the contents of a directory, including the state of any Git repositories contained within. The idea for the tool came from the frustration of manually checking the state of Git repositories in each folder. This tool was created to simplify this process and make it more efficient. Instead of having to manually navigate to each Git repository, the "gs" tool provides a centralized and streamlined way to view the state of all Git repositories in a directory. With colorful and easy-to-read output, the "gs" tool is a must-have for any developer who regularly uses Git for version control.
 
@@ -77,13 +77,13 @@ To install the gs tool, follow these steps:
 - Clone the repository to your local machine:
 
   ```bash
-  https://github.com/non-existing-organization/golang-gs.git
+  https://github.com/non-existing-organization/golang-gsls.git
   ```
 
 - Change into the project directory:
 
   ```bash
-  cd golang-gs
+  cd golang-gsls
   ```
 
 - Build the project:
@@ -118,7 +118,7 @@ The output will display the information for each file and directory in the curre
 
 ## Roadmap
 
-See the [open issues](https://github.com/non-existing-organization/golang-gs/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/non-existing-organization/golang-gsls/issues) for a list of proposed features (and known issues).
 
 ---
 
@@ -166,16 +166,16 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/non-existing-organization/golang-gs.svg?style=for-the-badge
-[contributors-url]: https://github.com/non-existing-organization/golang-gs/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/non-existing-organization/golang-gs.svg?style=for-the-badge
-[forks-url]: https://github.com/non-existing-organization/golang-gs/network/members
-[stars-shield]: https://img.shields.io/github/stars/non-existing-organization/golang-gs.svg?style=for-the-badge
-[stars-url]: https://github.com/non-existing-organization/golang-gs/stargazers
-[issues-shield]: https://img.shields.io/github/issues/non-existing-organization/golang-gs.svg?style=for-the-badge
-[issues-url]: https://github.com/non-existing-organization/golang-gs/issues
-[license-shield]: https://img.shields.io/github/license/non-existing-organization/golang-gs?style=for-the-badge
-[license-url]: https://github.com/non-existing-organization/golang-gs/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/non-existing-organization/golang-gsls.svg?style=for-the-badge
+[contributors-url]: https://github.com/non-existing-organization/golang-gsls/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/non-existing-organization/golang-gsls.svg?style=for-the-badge
+[forks-url]: https://github.com/non-existing-organization/golang-gsls/network/members
+[stars-shield]: https://img.shields.io/github/stars/non-existing-organization/golang-gsls.svg?style=for-the-badge
+[stars-url]: https://github.com/non-existing-organization/golang-gsls/stargazers
+[issues-shield]: https://img.shields.io/github/issues/non-existing-organization/golang-gsls.svg?style=for-the-badge
+[issues-url]: https://github.com/non-existing-organization/golang-gsls/issues
+[license-shield]: https://img.shields.io/github/license/non-existing-organization/golang-gsls?style=for-the-badge
+[license-url]: https://github.com/non-existing-organization/golang-gsls/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/johnstilia/
 [product-screenshot]: .assets/screenshot.png
