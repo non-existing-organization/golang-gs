@@ -40,7 +40,7 @@ func main() {
 	}
 
 	// Print the header
-	fmt.Printf("%s %s %s %s %s\n", "Mode", "Name", "Size", "Date", "Git State")
+	fmt.Printf("%-10s\t%-*s\t%-5s\t%-12s\t%s\n", "Mode", maxNameLen, "Name", "Size", "Date", "Git State")
 
 	// Iterate over the contents of the directory
 	for _, file := range files {
@@ -82,7 +82,7 @@ func main() {
 		}
 
 		// Print the file information
-		fmt.Printf("%s %-*s %-5d %-12s %s\n", coloredMode, maxNameLen, file.Name(), file.Size(), file.ModTime().Format("Jan 2 15:04"), gitState)
+		fmt.Printf("%-10s\t%-*s\t%-5d\t%-12s\t%s\n", coloredMode, maxNameLen, file.Name(), file.Size(), file.ModTime().Format("2006-01-02"), gitState)
 	}
 }
 
