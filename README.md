@@ -10,7 +10,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/non-existing-organization/golang-gs">
-    <img src="https://raw.githubusercontent.com/non-existing-organization/golang-gs/main/.assets/logo.png" alt="Main Logo" width="80" height="80">
+    <img src="https://github.com/stiliajohny/golang-gs/raw/master/.assets/logo.png" alt="Main Logo" width="80" height="80">
   </a>
 
   <h3 align="center">golang-gs</h3>
