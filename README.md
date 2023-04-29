@@ -88,7 +88,12 @@ To install the gs tool, follow these steps:
 
 - Build the project:
   ```go
-  go build
+    GOOS=linux GOARCH=amd64 go build -o ./bin/gs_linux_amd64 gs.go
+    GOOS=darwin GOARCH=amd64 go build -o ./bin/gs_darwin_amd64 gs.go
+    GOOS=windows GOARCH=amd64 go build -o ./bin/gs_windows_amd64.exe gs.go
+    GOOS=linux GOARCH=arm go build -o ./bin/gs_linux_arm gs.go
+    GOOS=linux GOARCH=arm64 go build -o ./bin/gs_linux_arm64 gs.go
+    GOOS=windows GOARCH=386 go build -o ./bin/gs_windows_386.exe gs.go
   ```
 
 The gs executable file will be generated in the project directory. You can now run the tool using the following command:
