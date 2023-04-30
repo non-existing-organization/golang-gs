@@ -8,11 +8,11 @@ class Gsls < Formula
 
   def install
     if OS.mac?
-      bin.install "gs_darwin_amd64" => "gsls"
+      bin.install "gsls_darwin_amd64" => "gsls"
     elsif OS.linux?
-      bin.install "gs_linux_amd64" => "gsls"
+      bin.install "gsls_linux_amd64" => "gsls"
     elsif OS.windows?
-      bin.install "gs_windows_amd64.exe" => "gsls.exe"
+      bin.install "gsls_windows_amd64.exe" => "gsls.exe"
     end
   end
 
