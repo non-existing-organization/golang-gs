@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"os/exec"
@@ -8,8 +9,33 @@ import (
 	"strings"
 )
 
+var version = "0.2.0"
+
 func main() {
 	var dir string
+
+	// Define the --version flag
+	flagVersion := flag.Bool("version", false, "print the app version")
+	flag.Parse()
+
+	// Print the app version if the flag is set
+	if *flagVersion {
+		fmt.Println("gsls version", version)
+		return
+	}
+
+	// Get the directory from the command-line arguments
+	if len(os.Args) > 1 {
+		dir = os.Args[1]
+	} else {
+		// Get the current directory
+		var err error
+		dir, err = os.Getwd()
+		if err != nil {
+			fmt.Println("Error getting current directory:", err)
+			os.Exit(1)
+		}
+	}
 	if len(os.Args) > 1 {
 		dir = os.Args[1]
 	} else {
