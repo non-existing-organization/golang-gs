@@ -9,14 +9,20 @@ import (
 )
 
 func main() {
-	// Get the current directory
-	dir, err := os.Getwd()
-	if err != nil {
-		fmt.Println("Error getting current directory:", err)
-		os.Exit(1)
+	var dir string
+	if len(os.Args) > 1 {
+		dir = os.Args[1]
+	} else {
+		// Get the current directory
+		var err error
+		dir, err = os.Getwd()
+		if err != nil {
+			fmt.Println("Error getting current directory:", err)
+			os.Exit(1)
+		}
 	}
 
-	// Open the current directory
+	// Open the directory
 	f, err := os.Open(dir)
 	if err != nil {
 		fmt.Println("Error opening directory:", err)
