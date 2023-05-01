@@ -1,9 +1,9 @@
 class Gsls < Formula
   desc "Get a quick overview of Git repositories with gs, a alternative to ls"
   homepage "https://github.com/non-existing-organization/golang-gsls"
-  url "https://github.com/non-existing-organization/golang-gsls/releases/download/v0.1.2/golang-gsls-0.1.2.tar.gz"
-  version "0.1.2"
-  sha256 "a2e5a8226f731064bdeec006538fb376090136ba285a2e25bce81d829e3a22af"
+  url "https://github.com/non-existing-organization/golang-gsls/releases/download/v0.2.0/golang-gsls-0.2,0.tar.gz"
+  version "0.2.0"
+  sha256 "6276da2b5b646d703ed1c4874720e521401b2fdc74c47991e3be5a061ee76968"
   license "Unlicense"
 
   def install
