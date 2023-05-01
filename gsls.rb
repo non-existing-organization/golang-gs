@@ -3,7 +3,7 @@ class Gsls < Formula
   homepage "https://github.com/non-existing-organization/golang-gsls"
   url "https://github.com/non-existing-organization/golang-gsls/releases/download/v0.3.0/golang-gsls-v0.3.0.tar.gz"
   version "0.3.0"
-  sha256 "2a24e682632e391a842b8b13a58c23ec0ec570ab216c45a85cc52c6fe91c5a72"
+  sha256 "b2729eae5c0dd380aeb5d599ce2d85c3b093290526b115eaf673cbcd668fb7e1"
   license "Unlicense"
 
   def install
