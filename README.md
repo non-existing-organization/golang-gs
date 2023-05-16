@@ -72,6 +72,13 @@ If Go is not installed, you can install it from the official website: https://go
 
 ### Installation
 
+#### With Brew 
+
+`brew tap non-existing-organization/golang-gsls`<br>
+`brew install gsls`
+
+#### Compile Go 
+
 To install the gs tool, follow these steps:
 
 - Clone the repository to your local machine:
