@@ -141,7 +141,36 @@ func listFiles(dir string) {
 		os.Exit(1)
 	}
 
-	// Find the length of the longest file name
+	openDir(files, dir)
+}
+
+func listFilesRecurs(path string) {
+	err := filepath.Walk(path, func(path string, info fs.FileInfo, err error) error {
+		if err != nil {
+			fmt.Printf("prevent panic by handling failure accessing a path %q: %v\n", path, err)
+			return err
+		}
+		if info.IsDir() {
+			fmt.Println("\n")
+			fmt.Printf("%s:\n", path)
+			files, err := ioutil.ReadDir(path)
+			if err != nil {
+				log.Fatal(err)
+			}
+
+			openDir(files, path)
+
+		}
+		return nil
+	})
+	if err != nil {
+		fmt.Printf("error walking the path %q: %v\n", path, err)
+		return
+	}
+}
+
+func openDir(files []fs.FileInfo, path string) {
+
 	var maxNameLen int
 	for _, file := range files {
 		if len(file.Name()) > maxNameLen {
@@ -149,12 +178,10 @@ func listFiles(dir string) {
 		}
 	}
 
-	// Print the header
 	fmt.Printf("%-10s\t%-*s\t%-5s\t%-12s\t%s\n", "Mode", maxNameLen, "Name", "Size", "Date", "Git State")
 
-	// Iterate over the contents of the directory
 	for _, file := range files {
-		// Get the file mode string
+
 		mode := file.Mode().String()
 
 		// Determine the color for each letter in the file mode
@@ -176,13 +203,14 @@ func listFiles(dir string) {
 			coloredMode += color + string(char) + "\033[0m"
 		}
 
-		// Get the git state if the file is a git repository
+		//Get the git state if the file is a git repository
 		gitState := ""
 		if file.IsDir() {
-			gitPath := filepath.Join(dir, file.Name(), ".git")
+			gitPath := filepath.Join(path, file.Name(), ".git")
+			dir_path := filepath.Join(path, file.Name())
 			_, err := os.Stat(gitPath)
 			if !os.IsNotExist(err) {
-				state, err := getGitState(filepath.Join(dir, file.Name()))
+				state, err := getGitState(dir_path)
 				if err != nil {
 					fmt.Println(err)
 					os.Exit(1)
@@ -191,83 +219,8 @@ func listFiles(dir string) {
 			}
 		}
 
-		// Print the file information
+		//Print the file information
 		fmt.Printf("%-10s\t%-*s\t%-5d\t%-12s\t%s\n", coloredMode, maxNameLen, file.Name(), file.Size(), file.ModTime().Format("2006-01-02"), gitState)
 	}
-}
 
-func listFilesRecurs(path string) {
-	err := filepath.Walk(path, func(path string, info fs.FileInfo, err error) error {
-		if err != nil {
-			fmt.Printf("prevent panic by handling failure accessing a path %q: %v\n", path, err)
-			return err
-		}
-		if info.IsDir() {
-			fmt.Println("\n")
-			fmt.Printf("%s:\n", path)
-			files, err := ioutil.ReadDir(path)
-			if err != nil {
-				log.Fatal(err)
-			}
-
-			//Find the length of the longest file name
-			var maxNameLen int
-			for _, file := range files {
-				if len(file.Name()) > maxNameLen {
-					maxNameLen = len(file.Name())
-				}
-			}
-
-			// Print the header
-			fmt.Printf("%-10s\t%-*s\t%-5s\t%-12s\t%s\n", "Mode", maxNameLen, "Name", "Size", "Date", "Git State")
-
-			for _, file := range files {
-
-				mode := file.Mode().String()
-
-				// Determine the color for each letter in the file mode
-				coloredMode := ""
-				for _, char := range mode {
-					color := ""
-					switch char {
-					case 'd':
-						color = "\033[1;34m"
-					case '-':
-						color = "\033[0;37m"
-					case 'r':
-						color = "\033[1;32m"
-					case 'w':
-						color = "\033[1;31m"
-					case 'x':
-						color = "\033[1;33m"
-					}
-					coloredMode += color + string(char) + "\033[0m"
-				}
-
-				//Get the git state if the file is a git repository
-				gitState := ""
-				if file.IsDir() {
-					gitPath := filepath.Join(path, file.Name(), ".git")
-					dir_path := filepath.Join(path, file.Name())
-					_, err := os.Stat(gitPath)
-					if !os.IsNotExist(err) {
-						state, err := getGitState(dir_path)
-						if err != nil {
-							fmt.Println(err)
-							os.Exit(1)
-						}
-						gitState = state
-					}
-				}
-
-				//Print the file information
-				fmt.Printf("%-10s\t%-*s\t%-5d\t%-12s\t%s\n", coloredMode, maxNameLen, file.Name(), file.Size(), file.ModTime().Format("2006-01-02"), gitState)
-			}
-		}
-		return nil
-	})
-	if err != nil {
-		fmt.Printf("error walking the path %q: %v\n", path, err)
-		return
-	}
 }
